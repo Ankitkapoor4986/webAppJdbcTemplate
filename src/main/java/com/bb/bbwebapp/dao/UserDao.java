@@ -27,7 +27,7 @@ public class UserDao {
 			String password) {
 		User user = null;
 		StringBuilder query = new StringBuilder();
-		query.append(" select emailAddress ,password_ from User_ where ")
+		query.append(" select userId,emailAddress ,password_ from User_ where ")
 				.append(" emailAddress=? and password_=?");
 		try {
 			user = jdbcTemplate.queryForObject(query.toString(), new Object[] {

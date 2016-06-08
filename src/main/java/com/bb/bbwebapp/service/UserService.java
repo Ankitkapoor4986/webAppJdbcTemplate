@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bb.bbwebapp.dao.UserDao;
+import com.bb.bbwebapp.model.User;
 
 /**
  * @author ankit
@@ -19,11 +20,10 @@ public class UserService {
 	@Autowired
 	private UserDao userDao;
 
-	public boolean isEmailAndPasswordAreCorrect(String emailAddress,
+	public Optional<User> getUserFromEmailIdAndPassword(String emailAddress,
 			String password) {
 
-		return !userDao.getUserFromEmailAndPassword(emailAddress, password).equals(
-				Optional.empty());
+		return userDao.getUserFromEmailAndPassword(emailAddress, password);
 
 	}
 
