@@ -31,8 +31,7 @@ ${groupName}
 	<spring:url value="/resources/bower_components/bootstrap/dist/js/bootstrap.min.js" var="bootstrapmin"></spring:url>
 	<spring:url value="/resources/images/logo/beachbody_logo.png" var="beachbody_logo"></spring:url>
 	<spring:url value="/resources/images/logo/image.jpg" var="imagejpg"></spring:url>
-	<script src="${jquery_our}"></script>
-	<script src="${bootstrapmin}"></script>
+	
 </head>
 <body>
 
@@ -190,9 +189,6 @@ ${groupName}
         <div class="col-lg-1 col-md-1"></div>
     </div>
 </body>
-
-
-
-
-</body>
+<script src="${jquery_our}"></script>
+<script src="${bootstrapmin}"></script>
 </html>
