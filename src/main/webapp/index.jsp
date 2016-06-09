@@ -1,15 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<!-- <html>
-<body>
-<form action="login" method="post">
- EmailAddress <input type="text" name="emailAddress">
- Password <input type="text" name="password" >
- <input type="submit">
-</form>
-</body>
-</html> -->
 
 <html lang="en">
 <head>
@@ -22,7 +13,7 @@
 	<spring:url value="/resources/bower_components/bootstrap/dist/js/bootstrap.min.js" var="bootstrapmin"></spring:url>
 	<spring:url value="/resources/images/logo/beachbody_logo.png" var="beachbody_logo"></spring:url>
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Beachbody template</title>
+    <title>Login</title>
 	    <spring:url value="/resources/bower_components/bootstrap/dist/css/bootstrap.min.css" var="bootstrapmincss"/>
     <link href=${bootstrapmincss} rel="stylesheet">
     <!-- Bootstrap -->

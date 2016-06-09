@@ -1,16 +1,4 @@
-<%-- <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<%@ page isELIgnored="false"%>
-<title>Home</title>
-</head>
-<body>
-${groupName}
-</body>
-</html> --%>
+
 
 
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
@@ -31,6 +19,7 @@ ${groupName}
 	<spring:url value="/resources/bower_components/bootstrap/dist/js/bootstrap.min.js" var="bootstrapmin"></spring:url>
 	<spring:url value="/resources/images/logo/beachbody_logo.png" var="beachbody_logo"></spring:url>
 	<spring:url value="/resources/images/logo/image.jpg" var="imagejpg"></spring:url>
+	<spring:url value="/index.jsp" var="index"></spring:url>
 	
 </head>
 <body>
@@ -107,7 +96,8 @@ ${groupName}
                         <li role="presentation" class="active"><a href="#">Home</a></li>
                         <li role="presentation"><a href="#">Profile</a></li>
                         <li role="presentation"><a href="#">Messages</a></li>
-                        <li role="presentation">Congratulation your group name is  ${groupName}</li>
+                        <li role="presentation"><a href="${index}">Logout</a></li>
+                        <li role="presentation" style="color:orange; font-weight: bold;">Congratulation your group name is  ${groupName}</li>
                     </ul>
                 </div>
                 <!--End Sidebar-->
