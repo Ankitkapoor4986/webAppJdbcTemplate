@@ -12,9 +12,10 @@
     <spring:url value="/resources/bower_components/jquery/dist/jquery.min.js" var="jquery_Our"></spring:url>
 	<spring:url value="/resources/bower_components/bootstrap/dist/js/bootstrap.min.js" var="bootstrapmin"></spring:url>
 	<spring:url value="/resources/images/logo/beachbody_logo.png" var="beachbody_logo"></spring:url>
+	<spring:url value="/resources/scripts/validation.js" var="validation_js"></spring:url>
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Login</title>
-	    <spring:url value="/resources/bower_components/bootstrap/dist/css/bootstrap.min.css" var="bootstrapmincss"/>
+ 	<spring:url value="/resources/bower_components/bootstrap/dist/css/bootstrap.min.css" var="bootstrapmincss"/>
     <link href=${bootstrapmincss} rel="stylesheet">
     <!-- Bootstrap -->
     
@@ -90,7 +91,7 @@
             <label for="exampleInputPassword1">Password</label>
             <input type="password" class="form-control" id="exampleInputPassword1" name="password">
         </div>
-        <button type="submit" class="btn btn-default">Login</button>
+        <button type="submit" id="submit_button" class="btn btn-default">Login</button>
         </form>
 
     </div>
@@ -101,6 +102,7 @@
 
 <script src="${jquery_Our}"></script>
 <script src="${bootstrapmin}"></script>
+<script src="${validation_js}"></script>
 
 </body>
 </html>
