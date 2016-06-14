@@ -1,5 +1,7 @@
 package com.bb.bbwebapp.model;
 
+import java.util.List;
+
 import com.bb.bbwebapp.constants.Constants;
 
 /**
@@ -14,6 +16,11 @@ public class User extends BaseDateDTO {
 	private String middleName;
 	private String lastName;
 	private String password;
+	
+	private double lat;
+	private double lng;
+	private List<TBBGroup> tbbgroups;
+	private List<Comment> comments;
 
 	public User() {
 	}
@@ -147,6 +154,38 @@ public class User extends BaseDateDTO {
 		} else if (!password.equals(other.password))
 			return false;
 		return true;
+	}
+
+	public List<Comment> getComments() {
+		return comments;
+	}
+
+	public void setComments(List<Comment> comments) {
+		this.comments = comments;
+	}
+
+	public double getLat() {
+		return lat;
+	}
+
+	public void setLat(double lat) {
+		this.lat = lat;
+	}
+
+	public double getLng() {
+		return lng;
+	}
+
+	public void setLng(double lng) {
+		this.lng = lng;
+	}
+
+	public List<TBBGroup> getTbbgroups() {
+		return tbbgroups;
+	}
+
+	public void setTbbgroups(List<TBBGroup> tbbgroups) {
+		this.tbbgroups = tbbgroups;
 	}
 
 

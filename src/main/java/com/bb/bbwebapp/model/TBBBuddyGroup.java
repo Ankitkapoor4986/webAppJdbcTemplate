@@ -9,7 +9,7 @@ public class TBBBuddyGroup {
     private User user;
     private double lat;
     private double lng;
-    private TBBBuddyGroup tbbBuddyGroup;
+    private TBBGroup tbbGroup;
     private double floatingLat;
     private double floatingLng;
 
@@ -63,14 +63,15 @@ public class TBBBuddyGroup {
 		this.floatingLng = floatingLng;
 	}
 
-	public TBBBuddyGroup getTbbBuddyGroup() {
-		return tbbBuddyGroup;
+	public TBBGroup getTbbGroup() {
+		return tbbGroup;
 	}
 
-	public void setTbbBuddyGroup(TBBBuddyGroup tbbBuddyGroup) {
-		this.tbbBuddyGroup = tbbBuddyGroup;
+	public void setTbbGroup(TBBGroup tbbGroup) {
+		this.tbbGroup = tbbGroup;
 	}
 
+	
     
 
 
