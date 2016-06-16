@@ -4,6 +4,7 @@
 package com.bb.bbwebapp.controller;
 
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,6 +30,7 @@ public class LoginController {
 	private TBBGroupService tbbGroupService;
 	
 	private static final String GROUP_NAME="groupName"; 
+	private static final String HEADS="heads";
 
 	@RequestMapping( value="/login",method=RequestMethod.POST)
 	public ModelAndView login(@RequestParam("emailAddress") String emailAddress,@RequestParam("password")
@@ -43,14 +45,12 @@ public class LoginController {
 			TBBGroup tbbGroup=tbbGroupService.getTBBBuddyGroupOfUser(optionalUser.get());
 			modelAndView.setViewName("home");
 			modelAndView.addObject(GROUP_NAME, tbbGroup.getGroupName());
+			modelAndView.addObject(HEADS,tbbGroup.getHeads().stream().map(s->s.getName()).collect(Collectors.toList()));
 		}
 		else{
 			System.out.println("User not authenticated");
 			modelAndView.setViewName("login");
 		}
-		
-		
-		
 		
 		return modelAndView;
 		

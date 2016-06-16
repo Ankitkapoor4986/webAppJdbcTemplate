@@ -25,9 +25,10 @@ public class TBBGroupDao {
 	public TBBGroup getTBBBuddyGroupOfUser(User user) {
 
 		StringBuilder query=new StringBuilder("select g.groupName as ")
-		.append(" groupName from User_ u join TBB_Buddy_Group bg ")
+		.append(" groupName ,h.name as head_name from User_ u join TBB_Buddy_Group bg ")
 		.append(" on u.userId=bg.userId join TBB_Group g ")
-		.append("  on g.groupId=bg.groupId and u.userId=?");
+		.append("  on g.groupId=bg.groupId and u.userId=? ")
+		.append(" join TBB_Head h on g.groupId=h.groupId ");
 		 
 		return jdbcTemplate.queryForObject(query.toString(),new Object[] {user.getUserId()},
 				new TBBGroupMapper());

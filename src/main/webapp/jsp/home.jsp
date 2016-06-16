@@ -1,7 +1,5 @@
-
-
-
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri= "http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,16 +8,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%@ page isELIgnored="false"%>
 	
+	
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 	<title>Home</title>
     <!-- Bootstrap -->
     <spring:url value="/resources/bower_components/bootstrap/dist/css/bootstrap.min.css" var="bootstrapmincss"/>
-    <link href=${bootstrapmincss} rel="stylesheet">
+  
 	<spring:url value="/resources/bower_components/jquery/dist/jquery.min.js" var="jquery_Our"></spring:url>
 	<spring:url value="/resources/bower_components/bootstrap/dist/js/bootstrap.min.js" var="bootstrapmin"></spring:url>
 	<spring:url value="/resources/images/logo/beachbody_logo.png" var="beachbody_logo"></spring:url>
 	<spring:url value="/resources/images/logo/image.jpg" var="imagejpg"></spring:url>
 	<spring:url value="/index.jsp" var="index"></spring:url>
+	  <link href=${bootstrapmincss} rel="stylesheet">
 	
 </head>
 <body>
@@ -114,9 +114,18 @@
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 hidden-sm hidden-xs" style="padding: 10px 10px 10px 16px;">
                                     <ul class="nav nav-pills">
-                                        <li role="presentation" class="active"><a href="#">Link 1</a></li>
+                                    	
+                                    	
+                                    	<c:forEach var="head" items="${heads}"> 
+                                    	<li role="presentation" class="active"><a href="#">${head}</a></li>
+                                    	</c:forEach> 
+
+									
+                                    	
+                                    	
+                                        <!-- <li role="presentation" class="active"><a href="#">Link 1</a></li>
                                         <li role="presentation"><a href="#">Link 2</a></li>
-                                        <li role="presentation"><a href="#">Link 3</a></li>
+                                        <li role="presentation"><a href="#">Link 3</a></li> -->
                                     </ul>
                                 </div>
                             </div>
