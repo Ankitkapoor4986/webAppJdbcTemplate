@@ -16,7 +16,7 @@ public class TBBGroup {
 	private double floatingLat;
 	private double floatingLng;
 	private List<User> users;
-	private List<TBBHead> heads;
+	private List<Head> heads;
 	
 	
 	public long getGroupId() {
@@ -49,10 +49,10 @@ public class TBBGroup {
 	public void setUsers(List<User> users) {
 		this.users = users;
 	}
-	public List<TBBHead> getHeads() {
+	public List<Head> getHeads() {
 		return heads;
 	}
-	public void setHeads(List<TBBHead> heads) {
+	public void setHeads(List<Head> heads) {
 		this.heads = heads;
 	}
 	

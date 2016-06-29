@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import org.springframework.jdbc.core.RowMapper;
 
 import com.bb.bbwebapp.model.TBBGroup;
-import com.bb.bbwebapp.model.TBBHead;
+import com.bb.bbwebapp.model.Head;
 
 /**
  * @author ankit
@@ -23,10 +23,10 @@ public class TBBGroupMapper implements RowMapper<TBBGroup> {
 		TBBGroup group = new TBBGroup();
 		group.setGroupName(resultSet.getString("groupName"));
 		if (group.getHeads() == null) {
-			group.setHeads(new ArrayList<TBBHead>());
+			group.setHeads(new ArrayList<Head>());
 		}
 		while (resultSet.next()) {
-			TBBHead head = new TBBHead();
+			Head head = new Head();
 			head.setName(resultSet.getString("head_name"));
 			group.getHeads().add(head);
 		}

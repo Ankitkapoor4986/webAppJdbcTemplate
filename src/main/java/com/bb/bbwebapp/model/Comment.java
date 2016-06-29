@@ -5,7 +5,7 @@ public class Comment {
 	private long id;
 	private String comment;
 	private User user;
-	private TBBHead head;
+	private Head head;
 	
 	public String getComment() {
 		return comment;
@@ -25,10 +25,10 @@ public class Comment {
 	public void setUser(User user) {
 		this.user = user;
 	}
-	public TBBHead getHead() {
+	public Head getHead() {
 		return head;
 	}
-	public void setHead(TBBHead head) {
+	public void setHead(Head head) {
 		this.head = head;
 	}
 }

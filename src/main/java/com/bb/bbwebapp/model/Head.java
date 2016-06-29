@@ -2,7 +2,7 @@ package com.bb.bbwebapp.model;
 
 import java.util.List;
 
-public class TBBHead {
+public class Head {
 	
 	private long id;
 	private String name;

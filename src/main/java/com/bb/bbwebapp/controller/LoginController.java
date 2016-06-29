@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.bb.bbwebapp.model.TBBGroup;
+import com.bb.bbwebapp.model.Head;
 import com.bb.bbwebapp.model.User;
+import com.bb.bbwebapp.service.CommentService;
 import com.bb.bbwebapp.service.TBBGroupService;
 import com.bb.bbwebapp.service.UserService;
 
@@ -29,6 +31,9 @@ public class LoginController {
 	@Autowired
 	private TBBGroupService tbbGroupService;
 	
+	@Autowired
+	private CommentService commentService;
+	
 	private static final String GROUP_NAME="groupName"; 
 	private static final String HEADS="heads";
 
@@ -37,11 +42,13 @@ public class LoginController {
 	String password){
 	
 		
+		
 		ModelAndView modelAndView=new ModelAndView();
 		Optional<User> optionalUser=userservice.getUserFromEmailIdAndPassword(emailAddress, password);
+		
 		if(!optionalUser.equals(Optional.empty()))
 		{
-			System.out.println("User authenticated");
+			System.out.println("User Authenticated");
 			TBBGroup tbbGroup=tbbGroupService.getTBBBuddyGroupOfUser(optionalUser.get());
 			modelAndView.setViewName("home");
 			modelAndView.addObject(GROUP_NAME, tbbGroup.getGroupName());
@@ -51,6 +58,8 @@ public class LoginController {
 			System.out.println("User not authenticated");
 			modelAndView.setViewName("login");
 		}
+		
+		
 		
 		return modelAndView;
 		
