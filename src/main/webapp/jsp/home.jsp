@@ -19,6 +19,7 @@
 	<spring:url value="/resources/images/logo/beachbody_logo.png" var="beachbody_logo"></spring:url>
 	<spring:url value="/resources/images/logo/image.jpg" var="imagejpg"></spring:url>
 	<spring:url value="/index.jsp" var="index"></spring:url>
+	<spring:url value="/jsp/add_forum.jsp" var="add_forum"></spring:url>
 	  <link href=${bootstrapmincss} rel="stylesheet">
 	
 </head>
@@ -132,26 +133,17 @@
                                     	<c:forEach var="head" items="${heads}"> 
                                     	<li role="presentation" class="active"><a href="getComments?head_id=${head.id}">${head.name}</a></li>
                                     	</c:forEach> 
-                                    	<li role="presentation" ><a href="#">Add new Forum</a></li>
+                                    	<li role="presentation" ><a href="add_forum?user_id=${user_id}">Add new Forum</a></li>
                                     	
 
 									
                                     	
                                     	
-                                        <!-- <li role="presentation" class="active"><a href="#">Link 1</a></li>
-                                        <li role="presentation"><a href="#">Link 2</a></li>
-                                        <li role="presentation"><a href="#">Link 3</a></li> -->
+                                        
                                     </ul>
                                 </div>
                             </div>
-                            <!--END links after the image-->
-                            <!--&lt;!&ndash;BEGIN of second image&ndash;&gt;-->
-                            <!--<div class="row">-->
-                                <!--<div class="col-md-12 col-lg-12 hidden-sm hidden-xs">-->
-                                    <!--<img src="http://placehold.it/815x100" alt="cover-pic" class="img-rounded">-->
-                                <!--</div>-->
-                            <!--</div>-->
-                            <!--&lt;!&ndash;END of third image&ndash;&gt;-->
+                            
                
                 </div>
                 <!--END other part of sidebar-->

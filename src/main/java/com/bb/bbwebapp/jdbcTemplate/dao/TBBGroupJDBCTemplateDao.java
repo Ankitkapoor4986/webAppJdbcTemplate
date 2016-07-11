@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.bb.bbwebapp.interfaces.dao.TBBGroupDao;
 import com.bb.bbwebapp.mapper.TBBGroupMapper;
+import com.bb.bbwebapp.model.Head;
 import com.bb.bbwebapp.model.TBBGroup;
 import com.bb.bbwebapp.model.User;
 
@@ -36,6 +37,21 @@ public class TBBGroupJDBCTemplateDao implements TBBGroupDao  {
 		 
 		return jdbcTemplate.queryForObject(query.toString(),new Object[] {user.getUserId()},
 				new TBBGroupMapper());
+		
+	}
+
+
+	@Override
+	public void setHead(Head head) {
+		 
+		
+		
+		StringBuilder query=new StringBuilder();
+		query.append(" insert into TBB_Head ")
+		.append(" (name,groupId) values (?,?)");
+		jdbcTemplate.update(query.toString(), new Object[]{
+			head.getName(),head.getGroup().getGroupId()
+		});
 		
 	}
 

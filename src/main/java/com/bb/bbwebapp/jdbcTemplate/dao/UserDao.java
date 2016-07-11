@@ -42,6 +42,8 @@ public class UserDao {
 		}
 
 	}
+	
+	 
 
 	public List<String> getUsersFromGroup(long groupId, long userId) {
 		StringBuilder query = new StringBuilder(

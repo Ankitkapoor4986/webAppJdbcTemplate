@@ -26,12 +26,12 @@ public class TBBGroupMapper implements RowMapper<TBBGroup> {
 		if (group.getHeads() == null) {
 			group.setHeads(new ArrayList<Head>());
 		}
-		while (resultSet.next()) {
+		do {
 			Head head = new Head();
 			head.setId(resultSet.getLong("head_id"));
 			head.setName(resultSet.getString("head_name"));
 			group.getHeads().add(head);
-		}
+		} while (resultSet.next());
 		return group;
 	}
 

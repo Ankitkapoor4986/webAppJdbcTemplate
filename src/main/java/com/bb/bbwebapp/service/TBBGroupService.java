@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.bb.bbwebapp.interfaces.dao.TBBGroupDao;
+import com.bb.bbwebapp.model.Head;
 import com.bb.bbwebapp.model.TBBGroup;
 import com.bb.bbwebapp.model.User;
 
@@ -22,6 +23,10 @@ public class TBBGroupService {
 	private TBBGroupDao tbbBuddyGroupDao;
 	public TBBGroup getTBBBuddyGroupOfUser(User user){
 		return tbbBuddyGroupDao.getTBBBuddyGroupOfUser(user);
+	}
+	
+	public void setHead(Head head){
+		tbbBuddyGroupDao.setHead(head);
 	}
 	
 	
