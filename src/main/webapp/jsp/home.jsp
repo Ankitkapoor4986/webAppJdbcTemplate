@@ -97,7 +97,20 @@
                         <li role="presentation"><a href="#">Profile</a></li>
                         <li role="presentation"><a href="#">Messages</a></li>
                         <li role="presentation"><a href="${index}">Logout</a></li>
-                        <li role="presentation" style="color:orange; font-weight: bold;">Congratulation your group name is  ${groupName}</li>
+                        
+                        <li>Your nearby buddies are</li>
+                        <c:forEach var="other_user" items="${other_users}" >
+                       		
+                        <li role="presentation" style="color:blue; font-weight: bold;">${other_user}</li>
+                        </c:forEach>
+                        	<li role="presentation" >Active Users are:</li>
+                        <c:forEach var="active_user" items="${active_users}" >
+                       		<li role="presentation" style="color:orange; font-weight: bold;" >${active_user}</li>
+                        </c:forEach>
+                        	<li role="presentation" >New Users are:</li>
+                         <c:forEach var="new_user" items="${new_users}" >
+                       		<li role="presentation" style="color:red; font-weight: bold; ">${new_user}</li>
+                        </c:forEach>
                     </ul>
                 </div>
                 <!--End Sidebar-->
@@ -117,8 +130,10 @@
                                     	
                                     	
                                     	<c:forEach var="head" items="${heads}"> 
-                                    	<li role="presentation" class="active"><a href="#">${head}</a></li>
+                                    	<li role="presentation" class="active"><a href="getComments?head_id=${head.id}">${head.name}</a></li>
                                     	</c:forEach> 
+                                    	<li role="presentation" ><a href="#">Add new Forum</a></li>
+                                    	
 
 									
                                     	
@@ -137,49 +152,7 @@
                                 <!--</div>-->
                             <!--</div>-->
                             <!--&lt;!&ndash;END of third image&ndash;&gt;-->
-                    <!--BEGIN First row-->
-                    <div class="row" style="padding: 10px 12px 11px 0px; border-bottom: 1px solid #000000;">
-                        <div class="col-sm-12 col-md-4 col-lg-4 col-xs-12">
-                            <div class="row">
-                                <!--<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">-->
-                                    <!--<img src="http://placehold.it/260x200" alt="" class="img-rounded">-->
-                                <!--</div>-->
-                                <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 text-justify">
-                                    <p>
-                                    <h4>Heading</h4>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean enim velit, imperdiet sed neque eget, laoreet fringilla sem. Maecenas placerat convallis scelerisque. Vestibulum vitae gravida magna. Vestibulum rhoncus, magna vitae consectetur iaculis, quam lacus molestie erat, ac congue risus neque eget turpis. </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-12 col-md-4 col-lg-4 col-xs-12">
-                            <div class="row">
-                                <!--<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">-->
-                                    <!--<img src="http://placehold.it/260x200" alt="" class="img-rounded">-->
-                                <!--</div>-->
-                                <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 text-justify">
-                                    <p>
-                                    <h4>Heading</h4>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean enim velit, imperdiet sed neque eget, laoreet fringilla sem. Maecenas placerat convallis scelerisque. Vestibulum vitae gravida magna. Vestibulum rhoncus, magna vitae consectetur iaculis, quam lacus molestie erat, ac congue risus neque eget turpis. </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-12 col-md-4 col-lg-4 col-xs-12">
-                            <div class="row">
-                                <!--<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">-->
-                                    <!--<img src="http://placehold.it/260x200" alt="" class="img-rounded">-->
-                                <!--</div>-->
-                                <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 text-justify">
-                                    <p>
-                                    <h4>Heading</h4>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean enim velit, imperdiet sed neque eget, laoreet fringilla sem. Maecenas placerat convallis scelerisque. Vestibulum vitae gravida magna. Vestibulum rhoncus, magna vitae consectetur iaculis, quam lacus molestie erat, ac congue risus neque eget turpis. </p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <!--END First Row-->
+               
                 </div>
                 <!--END other part of sidebar-->
             </div>

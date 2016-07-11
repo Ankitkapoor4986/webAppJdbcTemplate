@@ -3,12 +3,13 @@
  */
 package com.bb.bbwebapp.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.bb.bbwebapp.dao.UserDao;
+import com.bb.bbwebapp.jdbcTemplate.dao.UserDao;
 import com.bb.bbwebapp.model.User;
 
 /**
@@ -26,5 +27,9 @@ public class UserService {
 		return userDao.getUserFromEmailAndPassword(emailAddress, password);
 
 	}
-
+	
+	public List<String> getUsersFromGroup(long groupId, long userId){
+		return userDao.getUsersFromGroup(groupId, userId);
+		
+	}
 }

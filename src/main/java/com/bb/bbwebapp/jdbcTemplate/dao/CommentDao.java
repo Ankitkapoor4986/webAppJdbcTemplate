@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.bb.bbwebapp.dao;
+package com.bb.bbwebapp.jdbcTemplate.dao;
 
 import java.util.List;
 
@@ -23,7 +23,7 @@ public class CommentDao {
 	private JdbcTemplate jdbcTemplate;
 	
 	public List<Comment> getCommentFromHead(long headId){
-		StringBuilder query=new StringBuilder("Select comment from TBB_Comment where head_id=?");
+		StringBuilder query=new StringBuilder("select comment,emailAddress from TBB_Comment c join User_  u on u.userId=c.user_id  and head_id=?");
 		
 		return jdbcTemplate.query(query.toString(), new Object[]{headId},new CommentMapper());
 	}
